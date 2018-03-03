@@ -1,2 +1,2 @@
 # EXP_IOT
-share some router or camera vulnerability exp
+share some router & camera vulnerability exploit
