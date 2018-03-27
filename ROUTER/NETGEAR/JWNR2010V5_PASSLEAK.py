@@ -12,7 +12,7 @@ def showpass(url):
 	print 'admin:'+index[1][8:-1]
 
 if __name__ == "__main__":
-	if(sys.argv[1])
+	if(sys.argv[1]):
 		showpass(sys.argv[1])
-	else
+	else:
 		print 'please add command param'
